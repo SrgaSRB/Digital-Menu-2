@@ -1,14 +1,12 @@
 # Build stage
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
-WORKDIR /app
+WORKDIR /src
 
-# Copy csproj and restore as distinct layers
-COPY Services/Services.csproj ./Services/
-RUN dotnet restore ./Services/Services.csproj
+COPY Services/Services.csproj Services/
+RUN dotnet restore Services/Services.csproj
 
-# Copy everything else and build
 COPY . .
-WORKDIR /app/Services
+WORKDIR /src/Services
 RUN dotnet publish Services.csproj -c Release -o /app/publish /p:UseAppHost=false
 
 # Runtime stage
