@@ -58,7 +58,7 @@ const ProductList: React.FC<Props> = ({ localId, subcategoryId, subcategoryName,
         <div className="subcategory-description-div" style={{ gridColumn: "span 3" }}>
           <div className="subcategory-description-image-div">
             <img
-              src="https://cdn.prod.website-files.com/680625384249960b2e79d540/6807d40347a36401fd3ae91b_info.png"
+              src="https://cdn.prod.website-files.com/680625384249960b2e79d540/681134090a8e9402a04720ab_information-circle-contained.svg"
               loading="lazy"
               alt=""
               className="image-12"
