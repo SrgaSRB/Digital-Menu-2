@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|c:\\users\\srdjan\\projects\\digital menu 2\\services\\services\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|solutionrelative:services\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|c:\\users\\srdjan\\projects\\digital menu 2\\services\\services\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|solutionrelative:services\\controllers\\notificationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -130,24 +126,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Dockerfile",
-              "RelativeDocumentMoniker": "Services\\Dockerfile",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Dockerfile",
-              "RelativeToolTip": "Services\\Dockerfile",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-29T17:08:07.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Notification.cs",
@@ -155,11 +138,12 @@
               "RelativeToolTip": "Services\\Models\\Notification.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T14:01:31.359Z"
+              "WhenOpened": "2025-04-29T14:01:31.359Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "NotificationCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\NotificationCreateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\NotificationCreateDto.cs",
@@ -171,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "NotificationGetDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\NotificationGetDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\NotificationGetDto.cs",
@@ -183,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "NotificationController.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\NotificationController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\NotificationController.cs",
@@ -191,12 +175,11 @@
               "RelativeToolTip": "Services\\Controllers\\NotificationController.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAzwCoAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T13:29:22.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T13:29:22.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "SubcategoryUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\SubcategoryUpdateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\SubcategoryUpdateDto.cs",
@@ -208,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "CategoriesController.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\CategoriesController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\CategoriesController.cs",
@@ -220,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\ProductController.cs",
@@ -232,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "SubcategoryCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\SubcategoryCreateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\SubcategoryCreateDto.cs",
@@ -244,7 +227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "SubCategoryGetDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\SubCategoryGetDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\SubCategoryGetDto.cs",
@@ -256,7 +239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "CategoryCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\CategoryCreateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\CategoryCreateDto.cs",
@@ -268,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Subcategory.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Subcategory.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Subcategory.cs",
@@ -280,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Product.cs",
@@ -292,7 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "ProductUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\ProductUpdateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\ProductUpdateDto.cs",
@@ -304,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "SubCategoryList.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\SubCategoryList.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\SubCategoryList.cs",
@@ -316,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "SubCategoriesGetDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\SubCategoriesGetDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\SubCategoriesGetDto.cs",
@@ -328,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "SubcategoryDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\SubcategoryDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\SubcategoryDto.cs",
@@ -340,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "CategoryUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\CategoryUpdateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\CategoryUpdateDto.cs",
@@ -352,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "ProductGetDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\ProductGetDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\ProductGetDto.cs",
@@ -364,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "ProductCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\ProductCreateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\ProductCreateDto.cs",
@@ -376,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "LoginResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\LoginResponseDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\LoginResponseDto.cs",
@@ -388,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "Subscription.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Subscription.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Subscription.cs",
@@ -400,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\AuthController.cs",
@@ -412,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Category.cs",
@@ -424,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "SubcategoryProduct.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\SubcategoryProduct.cs",
               "RelativeDocumentMoniker": "Services\\Models\\SubcategoryProduct.cs",
@@ -436,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "Local.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Local.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Local.cs",
@@ -448,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "Admin.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Admin.cs",
@@ -460,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "LocalController.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\LocalController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\LocalController.cs",
@@ -472,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "LoginRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\LoginRequestDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\LoginRequestDto.cs",
@@ -484,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "ProductDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\UserMenuDTOs\\ProductDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\UserMenuDTOs\\ProductDto.cs",
