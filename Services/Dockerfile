@@ -2,11 +2,11 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-COPY Services.csproj ./
-RUN dotnet restore
+COPY Services/Services.csproj ./Services/
+RUN dotnet restore ./Services/Services.csproj
 
-COPY . .
-RUN dotnet publish -c Release -o /app/publish
+COPY Services/ ./Services/
+RUN dotnet publish ./Services/Services.csproj -c Release -o /app/publish
 
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
