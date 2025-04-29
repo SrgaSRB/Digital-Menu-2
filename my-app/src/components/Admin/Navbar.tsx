@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar: React.FC = () => {
+
+    const [username, setUsername] = useState("");
+
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -10,6 +13,17 @@ const Navbar: React.FC = () => {
         localStorage.removeItem("user");
         navigate("/login");
     };
+
+    useEffect(() => {
+
+        const user = localStorage.getItem("user");
+
+        if (user) {
+            const parsedUser = JSON.parse(user);
+            setUsername(parsedUser.username);
+        }
+
+    }, []);
 
     return (
         <div className="admin-navbar">
@@ -35,16 +49,23 @@ const Navbar: React.FC = () => {
                             <div>Notifikacije</div>
                         </Link>
                     </div>
-                    <div className="div-block-18" onClick={handleLogout}>
-                        <Link to="/admin/logout" className="link-block logout w-inline-block">
-                            <img
-                                loading="lazy"
-                                src="https://cdn.prod.website-files.com/680625384249960b2e79d540/6806d1882993b4c6c34d5cbc_exit.png"
-                                alt=""
-                                className="image"
-                            />
-                        </Link>
+
+                    <div className="div-block-25">
+                        <div className="div-block-26">
+                            <div>{username}</div>
+                        </div>
+                        <div className="div-block-18" onClick={handleLogout}>
+                            <Link to="/admin/logout" className="link-block logout w-inline-block">
+                                <img
+                                    loading="lazy"
+                                    src="https://cdn.prod.website-files.com/680625384249960b2e79d540/6806d1882993b4c6c34d5cbc_exit.png"
+                                    alt=""
+                                    className="image"
+                                />
+                            </Link>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

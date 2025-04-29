@@ -17,17 +17,11 @@ namespace Services.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    ParentCategoryId = table.Column<Guid>(type: "uuid", nullable: true)
+                    Description = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Categories_Categories_ParentCategoryId",
-                        column: x => x.ParentCategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -42,6 +36,26 @@ namespace Services.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Locals", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subcategories",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    CategoryId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subcategories", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Subcategories_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -117,6 +131,7 @@ namespace Services.Migrations
                     AdditionalDescription = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<decimal>(type: "numeric", nullable: false),
                     ImageUrl = table.Column<string>(type: "text", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "boolean", nullable: false),
                     LocalId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
@@ -131,7 +146,7 @@ namespace Services.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Subscription",
+                name: "Subscriptions",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -142,9 +157,9 @@ namespace Services.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subscription", x => x.Id);
+                    table.PrimaryKey("PK_Subscriptions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Subscription_Locals_LocalId",
+                        name: "FK_Subscriptions_Locals_LocalId",
                         column: x => x.LocalId,
                         principalTable: "Locals",
                         principalColumn: "Id",
@@ -152,25 +167,25 @@ namespace Services.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductCategories",
+                name: "SubcategoryProducts",
                 columns: table => new
                 {
-                    CategoriesId = table.Column<Guid>(type: "uuid", nullable: false),
-                    ProductsId = table.Column<Guid>(type: "uuid", nullable: false)
+                    SubcategoryId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ProductId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductCategories", x => new { x.CategoriesId, x.ProductsId });
+                    table.PrimaryKey("PK_SubcategoryProducts", x => new { x.SubcategoryId, x.ProductId });
                     table.ForeignKey(
-                        name: "FK_ProductCategories_Categories_CategoriesId",
-                        column: x => x.CategoriesId,
-                        principalTable: "Categories",
+                        name: "FK_SubcategoryProducts_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ProductCategories_Products_ProductsId",
-                        column: x => x.ProductsId,
-                        principalTable: "Products",
+                        name: "FK_SubcategoryProducts_Subcategories_SubcategoryId",
+                        column: x => x.SubcategoryId,
+                        principalTable: "Subcategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -179,11 +194,6 @@ namespace Services.Migrations
                 name: "IX_Admins_LocalId",
                 table: "Admins",
                 column: "LocalId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Categories_ParentCategoryId",
-                table: "Categories",
-                column: "ParentCategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_MenuThemes_LocalId",
@@ -196,18 +206,23 @@ namespace Services.Migrations
                 column: "LocalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProductCategories_ProductsId",
-                table: "ProductCategories",
-                column: "ProductsId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Products_LocalId",
                 table: "Products",
                 column: "LocalId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Subscription_LocalId",
-                table: "Subscription",
+                name: "IX_Subcategories_CategoryId",
+                table: "Subcategories",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubcategoryProducts_ProductId",
+                table: "SubcategoryProducts",
+                column: "ProductId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Subscriptions_LocalId",
+                table: "Subscriptions",
                 column: "LocalId",
                 unique: true);
         }
@@ -225,19 +240,22 @@ namespace Services.Migrations
                 name: "Notifications");
 
             migrationBuilder.DropTable(
-                name: "ProductCategories");
+                name: "SubcategoryProducts");
 
             migrationBuilder.DropTable(
-                name: "Subscription");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Subscriptions");
 
             migrationBuilder.DropTable(
                 name: "Products");
 
             migrationBuilder.DropTable(
+                name: "Subcategories");
+
+            migrationBuilder.DropTable(
                 name: "Locals");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
         }
     }
 }

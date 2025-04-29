@@ -1,4 +1,3 @@
-// src/components/Menu/Categories.tsx
 import React, { useEffect, useState } from 'react';
 import axios from '../../services/api';
 import Loader from '../shared/Loader';
@@ -33,7 +32,19 @@ const Categories: React.FC<Props> = ({ localId, onSelectSubcategory }) => {
       setLoading(true);
       try {
         const response = await api.get(`/categories/${localId}`);
-        setCategories(response.data);
+        const data: Category[] = response.data;
+        setCategories(data);
+
+        if (data.length > 0) {
+          const firstMain = data[0];
+          setSelectedMain(firstMain);
+
+          if (firstMain.subCategories.length > 0) {
+            const firstSub = firstMain.subCategories[0];
+            setSelectedSub(firstSub.id);
+            onSelectSubcategory(firstSub);
+          }
+        }
       } catch (error) {
         console.error("Error fetching categories:", error);
       } finally {
@@ -45,7 +56,14 @@ const Categories: React.FC<Props> = ({ localId, onSelectSubcategory }) => {
 
   const handleMainSelect = (cat: Category) => {
     setSelectedMain(cat);
-    setSelectedSub(null);
+
+    if (cat.subCategories.length > 0) {
+      const firstSub = cat.subCategories[0];
+      setSelectedSub(firstSub.id);
+      onSelectSubcategory(firstSub);
+    } else {
+      setSelectedSub(null);
+    }
   };
 
   const handleSubSelect = (sub: Subcategory) => {

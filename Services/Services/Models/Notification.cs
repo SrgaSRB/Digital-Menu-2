@@ -13,7 +13,7 @@ namespace Services.Models
 
         public Guid LocalId { get; set; }
         [ForeignKey("LocalId")]
-        public Local Local { get; set; } = new Local();
+        public Local Local { get; set; }
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }

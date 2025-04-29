@@ -15,26 +15,24 @@ namespace Services.Data
         public DbSet<MenuTheme> MenuThemes { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<CategoryProduct> CategoryProducts { get; set; }
+        public DbSet<Subcategory> Subcategories { get; set; }
+        public DbSet<SubcategoryProduct> SubcategoryProducts { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<SubcategoryProduct>()
+                .HasKey(sp => new { sp.SubcategoryId, sp.ProductId });
 
-            modelBuilder.Entity<CategoryProduct>()
-                .HasKey(cp => new { cp.CategoriesId, cp.ProductsId });
+            modelBuilder.Entity<SubcategoryProduct>()
+                .HasOne(sp => sp.Subcategory)
+                .WithMany(s => s.SubcategoryProducts)
+                .HasForeignKey(sp => sp.SubcategoryId);
 
-            modelBuilder.Entity<CategoryProduct>()
-                .HasOne(cp => cp.Category)
-                .WithMany(c => c.CategoryProducts)
-                .HasForeignKey(cp => cp.CategoriesId);
-
-            modelBuilder.Entity<CategoryProduct>()
-                .HasOne(cp => cp.Product)
-                .WithMany(p => p.CategoryProducts)
-                .HasForeignKey(cp => cp.ProductsId);
-
-            modelBuilder.Entity<CategoryProduct>()
-                .ToTable("ProductCategories");
+            modelBuilder.Entity<SubcategoryProduct>()
+                .HasOne(sp => sp.Product)
+                .WithMany(p => p.SubcategoryProducts)
+                .HasForeignKey(sp => sp.ProductId);
         }
 
     }

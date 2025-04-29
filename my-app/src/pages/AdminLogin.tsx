@@ -24,7 +24,8 @@ const AdminLogin: React.FC = () => {
             localStorage.setItem("user", JSON.stringify({
                 id: response.data.id,
                 username: response.data.username,
-                isSuperAdmin: response.data.isSuperAdmin
+                isSuperAdmin: response.data.isSuperAdmin,
+                localId: response.data.localId
             }));
 
             navigate("/admin/")

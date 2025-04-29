@@ -17,7 +17,7 @@ interface Category {
 interface NotificationModel {
   id: string;
   title: string;
-  message: string;
+  text: string;
 }
 
 const MenuPage: React.FC = () => {
@@ -28,7 +28,8 @@ const MenuPage: React.FC = () => {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const response = await api.get(`/notifications/by-local/${localId}`);
+        const response = await api.get(`/notification/by-local/${localId}`);
+        console.log("Notifikacije: ", response.data);
         setNotifications(response.data);
       } catch (error) {
         console.error("Error fetching notifications:", error);
@@ -36,7 +37,7 @@ const MenuPage: React.FC = () => {
     };
 
     if (localId) {
-      //fetchNotifications();
+      fetchNotifications();
     }
   }, [localId]);
 
@@ -63,30 +64,36 @@ const MenuPage: React.FC = () => {
                 onSelectSubcategory={(subcategory) => setSelectedSubcategory(subcategory)}
               />
 
-                {selectedSubcategory ? (
+              {selectedSubcategory ? (
                 <ProductList
                   localId={localId}
                   subcategoryId={selectedSubcategory.id}
                   subcategoryName={selectedSubcategory.name}
                   subcategoryDescription={selectedSubcategory.description}
                 />
-                ) : (
-                <div>Izaberi kategoriju</div>
-                )}
-
-              {notifications.map((notification) => (
-                <Notification
-                  key={notification.id}
-                  title={notification.title}
-                  text={notification.message}
-                  onClose={() => handleCloseNotification(notification.id)}
-                />
-              ))}
+              ) : (
+                <div >Izaberi kategoriju</div>
+              )}
 
             </div>
           </div>
         </div>
       </section >
+
+      {notifications.length > 0 && (
+        <section className="notification-section">
+          <div className="w-layout-blockcontainer container w-container">
+            {notifications.map((notification) => (
+              <Notification
+                key={notification.id}
+                title={notification.title}
+                text={notification.text}
+                onClose={() => handleCloseNotification(notification.id)}
+              />
+            ))}
+          </div>
+        </section>
+      )}
 
     </div >
   );

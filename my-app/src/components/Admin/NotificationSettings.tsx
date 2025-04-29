@@ -1,6 +1,112 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import api from "../../services/api";
+
+interface Notificatoin {
+    id: string;
+    title: string;
+    text: string;
+}
 
 const NotificationSettings: React.FC = () => {
+
+    const [notificationTitle, setNotificationTitle] = useState("");
+    const [notidicationText, setNotificationText] = useState("");
+    const [loading, setLoading] = useState(true);
+    const [notifications, setNotifications] = useState<Notificatoin[]>([]);
+
+    useEffect(() => {
+        fetchNotifications();
+    }, []);
+
+    const fetchNotifications = async () => {
+
+        setLoading(true);
+
+        const user = localStorage.getItem("user");
+        if (!user) return;
+
+        const parsedUser = JSON.parse(user);
+
+        try {
+            const response = await api.get(`/notification/${parsedUser.localId}`)
+            setNotifications(response.data);
+            console.log(response.data)
+        } catch (error) {
+            alert("Greska pri ucitavanju notifikacije")
+            console.error(error)
+        } finally {
+            setLoading(false)
+        }
+
+    }
+
+    const handleCreateNotification = async (e: React.FormEvent<HTMLFormElement>) => {
+
+        setLoading(true);
+
+        const user = localStorage.getItem("user");
+        if (!user) return;
+
+        const parsedUser = JSON.parse(user);
+
+        try {
+            const response = await api.post(`/notification/${parsedUser.localId}`, {
+                title: notificationTitle,
+                text: notidicationText
+            });
+            alert("Notifikacija uspesno dodata")
+            console.log("parsedUser:", parsedUser);
+            console.log("parsedUser.localId:", parsedUser.localId);
+            fetchNotifications();
+        } catch (error) {
+            alert("Greska pri dodavanju notifikacije")
+            console.error(error)
+        } finally {
+            setLoading(false)
+        }
+
+    }
+
+    const handleUpdateNotification = async (notification: Notificatoin) => {
+        setLoading(true);
+
+        try {
+            await api.put(`/notification/${notification.id}`, {
+                title: notification.title,
+                text: notification.text,
+            });
+
+            alert("Notifikacija uspešno ažurirana!");
+            await fetchNotifications();
+        } catch (error) {
+            alert("Greška pri ažuriranju notifikacije!");
+            console.error(error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
+    const handleNotificationChange = (index: number, field: keyof Notificatoin, value: any) => {
+        const updated = [...notifications];
+        (updated[index] as any)[field] = value;
+        setNotifications(updated);
+    };
+
+    const handleDeleteNotification = async (id: string) => {
+        if (!window.confirm("Da li ste sigurni da želite da obrišete ovu notifikaciju?")) return;
+
+        try {
+            await api.delete(`/notification/${id}`);
+            alert("Notifikacija uspešno obrisana!");
+            await fetchNotifications();
+        } catch (error) {
+            alert("Greška pri brisanju notifikacije!");
+            console.error(error);
+        }
+    };
+
+
 
     return (
         <section className="admin-notification-section">
@@ -9,11 +115,17 @@ const NotificationSettings: React.FC = () => {
                     <div className="div-block-20">
                         <div className="w-form">
                             <div className="text-block-14">Dodaj notifikaciju</div>
-                            <form id="email-form-5" name="email-form-5" data-name="Email Form 5" method="get" data-wf-page-id="6806d17ca79e347fe1b77f0c" data-wf-element-id="0d2ed32e-3fe0-0c96-1806-982811242962" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e">
+                            <form id="email-form-5" name="email-form-5" data-name="Email Form 5" onSubmit={handleCreateNotification}>
                                 <label htmlFor="name-9">Naslov*</label>
-                                <input className="text-field-7 w-input" maxLength={256} name="name-9" data-name="Name 9" placeholder="Unesi naslov notifikacije" type="text" id="name-9" required />
-                                <label htmlFor="field-8">Opis*</label>
-                                <textarea id="field-8" name="field-8" maxLength={500} data-name="Field 8" placeholder="Unesi opis notifikacije" required className="w-input"></textarea>
+                                <input className="text-field-7 w-input" maxLength={256} name="name-9" data-name="Name 9" placeholder="Unesi naslov notifikacije" type="text" required
+                                    value={notificationTitle}
+                                    onChange={e => setNotificationTitle(e.target.value)}
+                                />
+                                <label htmlFor="field-8">Tekst*</label>
+                                <textarea id="field-8" name="field-8" maxLength={500} data-name="Field 8" placeholder="Unesi opis notifikacije" required className="w-input"
+                                    value={notidicationText}
+                                    onChange={e => setNotificationText(e.target.value)}
+                                />
                                 <input type="submit" data-wait="Please wait..." className="submit-button-4 w-button" value="Kreiraj notifikaciju" />
                             </form>
                         </div>
@@ -21,18 +133,51 @@ const NotificationSettings: React.FC = () => {
                     <div className="div-block-21">
                         <div className="text-block-13">Lista notifikacija</div>
                         <div className="admin-notification-list">
-                            <div className="form-block-7 w-form">
-                                <form id="email-form-6" name="email-form-6" data-name="Email Form 6" method="get" className="form-3" data-wf-page-id="6806d17ca79e347fe1b77f0c" data-wf-element-id="0d2ed32e-3fe0-0c96-1806-982811242975" data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e">
-                                    <label htmlFor="name-9">Naslov*</label>
-                                    <input className="w-input" maxLength={256} name="name-10" data-name="Name 10" placeholder="" type="text" id="name-10" required />
-                                    <label htmlFor="email-4">Opis*</label>
-                                    <input className="w-input" maxLength={256} name="email-4" data-name="Email 4" placeholder="" type="email" id="email-4" required />
-                                    <div className="div-block-22">
-                                        <input type="submit" data-wait="Please wait..." className="submit-button-3 w-button" value="Sačuvaj izmene" />
-                                        <a className="button-remove w-button">Obriši</a>
-                                    </div>
-                                </form>
-                            </div>
+
+                            {notifications.map((notification, index) => (
+                                <div className="form-block-7 w-form" key={notification.id}>
+                                    <form
+                                        id="email-form-6"
+                                        name="email-form-6"
+                                        onSubmit={(e) => {
+                                            e.preventDefault();
+                                            handleUpdateNotification(notification);
+                                        }}
+                                        className="form-3"
+                                    >
+                                        <label>Naslov*</label>
+                                        <input
+                                            className="w-input"
+                                            maxLength={256}
+                                            name="name-10"
+                                            type="text"
+                                            required
+                                            value={notification.title}
+                                            onChange={(e) => handleNotificationChange(index, "title", e.target.value)}
+                                        />
+
+                                        <label>Tekst*</label>
+                                        <input
+                                            className="w-input"
+                                            maxLength={500}
+                                            name="email-4"
+                                            type="text"
+                                            required
+                                            value={notification.text}
+                                            onChange={(e) => handleNotificationChange(index, "text", e.target.value)}
+                                        />
+
+                                        <div className="div-block-22">
+                                            <input type="submit" className="submit-button-3 w-button" value="Sačuvaj izmene" />
+                                            <a className="button-remove w-button" onClick={() => handleDeleteNotification(notification.id)}>
+                                                Obriši
+                                            </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            ))}
+
+
                         </div>
                     </div>
                 </div>

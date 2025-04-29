@@ -12,11 +12,13 @@ const AdminPanel: React.FC = () => {
         <div className="admin-panel">
             <Navbar />
             <Routes>
-                <Route path="/" />
+                <Route path="/" element={<ProductSettings />} />
                 <Route path="proizvodi" element={<ProductSettings />} />
                 <Route path="kategorije" element={<CategoriesSettings />} />
                 <Route path="notifikacije" element={<NotificationSettings />} />
+                {/*
                 <Route path="tema" element={<ThemeSelectorSettings />} />
+                */}
             </Routes>
         </div>
     );

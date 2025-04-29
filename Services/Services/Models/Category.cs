@@ -10,13 +10,11 @@ namespace Services.Models
         public string Name { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
 
-        public Guid? ParentCategoryId { get; set; }
-        [ForeignKey("ParentCategoryId")]
-        public Category? ParentCategory { get; set; }
+        public ICollection<Subcategory> Subcategories { get; set; } = new List<Subcategory>();
 
-        public ICollection<Category> SubCategories { get; set; } = new List<Category>();
-        public ICollection<CategoryProduct> CategoryProducts { get; set; } = new List<CategoryProduct>();
-
+        public Guid? LocalId { get; set; } 
+        public Local? Local { get; set; } = null!;
 
     }
+
 }

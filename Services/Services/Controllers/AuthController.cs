@@ -39,7 +39,8 @@ namespace Services.Controllers
                 {
                 new Claim(ClaimTypes.Name, admin.Username),
                 new Claim("UserId", admin.Id.ToString()),
-                new Claim("IsGlobalAdmin", admin.Role == "superadmin" ? "true" : "false")
+                new Claim("IsGlobalAdmin", admin.Role == "superadmin" ? "true" : "false"),
+                new Claim("LocalId", admin.LocalId.ToString())
             }),
                 Expires = DateTime.UtcNow.AddHours(6),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
@@ -53,7 +54,8 @@ namespace Services.Controllers
                 Token = jwt,
                 Username = admin.Username,
                 Id = admin.Id,
-                IsSuperAdmin = admin.Role == "superadmin"
+                IsSuperAdmin = admin.Role == "superadmin",
+                LocalId = admin.LocalId
             });
         }
 
