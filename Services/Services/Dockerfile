@@ -2,14 +2,10 @@
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 
-# Kopiramo samo .csproj i restore-ujemo dependencije
-COPY Services/Services.csproj ./Services/
-RUN dotnet restore ./Services/Services.csproj
+COPY *.csproj ./
+RUN dotnet restore
 
-# Kopiramo ostatak
 COPY . .
-
-WORKDIR /app/Services
 RUN dotnet publish -c Release -o /app/publish
 
 # Runtime stage
