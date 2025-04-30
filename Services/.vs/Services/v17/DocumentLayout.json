@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|c:\\users\\srdjan\\projects\\digital menu 2\\services\\services\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|solutionrelative:services\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|c:\\users\\srdjan\\projects\\digital menu 2\\services\\services\\controllers\\localcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|solutionrelative:services\\controllers\\localcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -60,10 +64,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|c:\\users\\srdjan\\projects\\digital menu 2\\services\\services\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|solutionrelative:services\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|c:\\users\\srdjan\\projects\\digital menu 2\\services\\services\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|solutionrelative:services\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DE059931-6465-4559-ABDB-F205A043391E}|Services\\Services.csproj|c:\\users\\srdjan\\projects\\digital menu 2\\services\\services\\dtos\\admindtos\\subcategorycreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -141,8 +141,106 @@
       "DocumentGroups": [
         {
           "DockedWidth": 217,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Local.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Local.cs",
+              "RelativeDocumentMoniker": "Services\\Models\\Local.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Local.cs",
+              "RelativeToolTip": "Services\\Models\\Local.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAIAwwAwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T17:20:05.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "Services\\Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Admin.cs",
+              "RelativeToolTip": "Services\\Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T17:20:13.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LocalController.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\LocalController.cs",
+              "RelativeDocumentMoniker": "Services\\Controllers\\LocalController.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\LocalController.cs",
+              "RelativeToolTip": "Services\\Controllers\\LocalController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T17:17:12.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Services\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Services\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T16:50:23.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Services\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Product.cs",
+              "RelativeToolTip": "Services\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAEwBEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T17:09:03.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SubcategoryProduct.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\SubcategoryProduct.cs",
+              "RelativeDocumentMoniker": "Services\\Models\\SubcategoryProduct.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\SubcategoryProduct.cs",
+              "RelativeToolTip": "Services\\Models\\SubcategoryProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T21:37:39.553Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Subscription.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Subscription.cs",
+              "RelativeDocumentMoniker": "Services\\Models\\Subscription.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Subscription.cs",
+              "RelativeToolTip": "Services\\Models\\Subscription.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T17:08:19.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Services\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Services\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAuwDEBAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T17:14:11.896Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 19,
@@ -157,98 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Local.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Local.cs",
-              "RelativeDocumentMoniker": "Services\\Models\\Local.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Local.cs",
-              "RelativeToolTip": "Services\\Models\\Local.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAIAwwAwAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T17:20:05.279Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "Services\\Models\\Admin.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Admin.cs",
-              "RelativeToolTip": "Services\\Models\\Admin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T17:20:13.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LocalController.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\LocalController.cs",
-              "RelativeDocumentMoniker": "Services\\Controllers\\LocalController.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\LocalController.cs",
-              "RelativeToolTip": "Services\\Controllers\\LocalController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAzwCsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T17:17:12.023Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Services\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Services\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAqwBgAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:50:23.074Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "Services\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Product.cs",
-              "RelativeToolTip": "Services\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAEwBEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T17:09:03.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SubcategoryProduct.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\SubcategoryProduct.cs",
-              "RelativeDocumentMoniker": "Services\\Models\\SubcategoryProduct.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\SubcategoryProduct.cs",
-              "RelativeToolTip": "Services\\Models\\SubcategoryProduct.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:37:39.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Subscription.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Subscription.cs",
-              "RelativeDocumentMoniker": "Services\\Models\\Subscription.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Subscription.cs",
-              "RelativeToolTip": "Services\\Models\\Subscription.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T17:08:19.556Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "NotificationController.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\NotificationController.cs",
               "RelativeDocumentMoniker": "Services\\Controllers\\NotificationController.cs",
@@ -261,7 +268,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "NotificationGetDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\NotificationGetDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\NotificationGetDto.cs",
@@ -273,7 +280,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Dockerfile",
               "RelativeDocumentMoniker": "Services\\Dockerfile",
@@ -281,12 +288,11 @@
               "RelativeToolTip": "Services\\Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-29T17:24:58.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T17:24:58.177Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "LocalUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\LocalUpdateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\LocalUpdateDto.cs",
@@ -294,12 +300,11 @@
               "RelativeToolTip": "Services\\DTOs\\AdminDTOs\\LocalUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T00:55:12.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T00:55:12.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "LocalGetDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\LocalGetDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\LocalGetDto.cs",
@@ -307,12 +312,11 @@
               "RelativeToolTip": "Services\\DTOs\\AdminDTOs\\LocalGetDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T23:59:59.443Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T23:59:59.443Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "NotificationCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\DTOs\\AdminDTOs\\NotificationCreateDto.cs",
               "RelativeDocumentMoniker": "Services\\DTOs\\AdminDTOs\\NotificationCreateDto.cs",
@@ -324,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Notification.cs",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Services\\Models\\Notification.cs",
@@ -336,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Container.targets",
               "DocumentMoniker": "C:\\Users\\SRDJAN\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\build\\Container.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\build\\Container.targets",
@@ -345,18 +349,6 @@
               "ViewState": "AgIAAMUAAAAAAAAAAAAtwNgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
               "WhenOpened": "2025-04-29T18:34:39.726Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "Services\\Controllers\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "Services\\Controllers\\CategoriesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T17:14:11.896Z"
             },
             {
               "$type": "Document",

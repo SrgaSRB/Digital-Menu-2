@@ -293,6 +293,23 @@ namespace Services.Controllers
             return Ok();
         }
 
+        [HttpDelete("admin/subcategories/{id}")]
+        public async Task<IActionResult> DeleteSubcategory(Guid id)
+        {
+            var subcategory = await _context.Subcategories.FindAsync(id);
+
+            if (subcategory == null)
+            {
+                return NotFound("Subcategory not found");
+            }
+
+            _context.Subcategories.Remove(subcategory);
+            await _context.SaveChangesAsync();
+
+            return Ok("Subcategory successfully deleted");
+        }
+
+
 
         #endregion
 

@@ -178,7 +178,7 @@ const CategoriesSettings: React.FC = () => {
 
     const handleSaveSubcategory = async (subcategory: Subcategory) => {
         try {
-            await api.put(`/subcategories/${subcategory.id}`, {
+            await api.put(`/categories/admin/subcategories/${subcategory.id}`, {
                 name: subcategory.name,
                 description: subcategory.description
             });

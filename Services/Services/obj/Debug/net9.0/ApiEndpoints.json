@@ -123,6 +123,22 @@
   },
   {
     "ContainingType": "Services.Controllers.CategoriesController",
+    "Method": "DeleteSubcategory",
+    "RelativePath": "api/Categories/admin/subcategories/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.Controllers.CategoriesController",
     "Method": "GetSubcategories",
     "RelativePath": "api/Categories/admin/subcategories/{localId}",
     "HttpMethod": "GET",
