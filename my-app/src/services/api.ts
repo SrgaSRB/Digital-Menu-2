@@ -1,3 +1,5 @@
+// for local back url: http://localhost:5262/api
+
 import def from 'ajv/dist/vocabularies/discriminator';
 import axios from 'axios';
 

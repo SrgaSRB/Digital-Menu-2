@@ -6,13 +6,15 @@ import ProductSettings from "../components/Admin/ProductSettings";
 import CategoriesSettings from "../components/Admin/CategorySettings";
 import NotificationSettings from "../components/Admin/NotificationSettings";
 import ThemeSelectorSettings from "../components/Admin/ThemeSelector";
+import Dashboard from "../components/Admin/Dashboard";
 
 const AdminPanel: React.FC = () => {
     return (
-        <div className="admin-panel">
+        <div className="body-3">
             <Navbar />
             <Routes>
                 <Route path="/" element={<ProductSettings />} />
+                <Route path="lokal" element={<Dashboard />} />
                 <Route path="proizvodi" element={<ProductSettings />} />
                 <Route path="kategorije" element={<CategoriesSettings />} />
                 <Route path="notifikacije" element={<NotificationSettings />} />

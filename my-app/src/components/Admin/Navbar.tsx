@@ -31,6 +31,12 @@ const Navbar: React.FC = () => {
                 <div className="admin-wrapper">
                     <div className="div-block-17">
                         <Link
+                            to="/admin/lokal"
+                            className={`link-block ${location.pathname === "/admin/lokal" ? "selected-lb" : ""} w-inline-block`}
+                        >
+                            <div>Lokal</div>
+                        </Link>
+                        <Link
                             to="/admin/proizvodi"
                             className={`link-block ${location.pathname === "/admin/proizvodi" ? "selected-lb" : ""} w-inline-block`}
                         >

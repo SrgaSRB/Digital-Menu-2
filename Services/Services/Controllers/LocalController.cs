@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Services.Data;
+using Services.DTOs.AdminDTOs;
 using Services.DTOs.UserMenuDTOs;
 
 namespace Services.Controllers
@@ -42,6 +43,52 @@ namespace Services.Controllers
 
             return Ok(localHeader);
         }
+
+        [HttpGet("{localId}")]
+        public async Task<IActionResult> GetLocalInfo(Guid localId)
+        {
+            var local = await _context.Locals
+                .Where(l => l.Id == localId)
+                .Select(l => new LocalGetDto
+                {
+                    Id = l.Id,
+                    Name = l.Name,
+                    ImageUrl = l.LogoUrl,
+                    Subscription = l.Subscription.EndDate
+                })
+                .FirstOrDefaultAsync();
+
+            if (local == null)
+                return NotFound();
+
+            return Ok(local);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateLocal(Guid id, [FromBody] LocalUpdateDto dto)
+        {
+            var local = await _context.Locals.FindAsync(id);
+            if (local == null)
+                return NotFound("Lokal nije pronađen");
+
+            local.Name = dto.Name;
+
+            if (string.IsNullOrEmpty(dto.ImageUrl))
+            {
+                local.LogoUrl = null;
+                local.HaveLogo = false;
+            }
+            else
+            {
+                local.LogoUrl = dto.ImageUrl;
+                local.HaveLogo = true;
+            }
+
+            await _context.SaveChangesAsync();
+            return Ok("Lokal uspešno ažuriran");
+        }
+
+
 
 
     }

@@ -5,7 +5,7 @@ import Loader from '../shared/Loader';
 
 interface Local {
     name: string;
-    logoUrl: string;
+    imageUrl: string;
 }
 
 interface Props {
@@ -50,7 +50,7 @@ const Header: React.FC<Props> = ({ localId }) => {
                 <div className="nav-wrapper">
                     <img sizes="(max-width: 645px) 100vw, 645px"
                         alt="local logo"
-                        src={local.logoUrl}
+                        src={local.imageUrl}
                         loading="lazy" className="logo-image" />
                     <div className="local-name">{local.name}</div>
                 </div>

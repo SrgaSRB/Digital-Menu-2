@@ -187,6 +187,43 @@
   },
   {
     "ContainingType": "Services.Controllers.LocalController",
+    "Method": "UpdateLocal",
+    "RelativePath": "api/Local/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Services.DTOs.AdminDTOs.LocalUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.Controllers.LocalController",
+    "Method": "GetLocalInfo",
+    "RelativePath": "api/Local/{localId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "localId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.Controllers.LocalController",
     "Method": "GetLocalHeader",
     "RelativePath": "api/Local/header/{localId}",
     "HttpMethod": "GET",
