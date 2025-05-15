@@ -75,6 +75,7 @@ const ProductList: React.FC<Props> = ({ localId, subcategoryId, subcategoryName,
       {filteredProducts.map((product) => (
         <ProductItem key={product.id} product={product} />
       ))}
+      
     </div>
   );
 
