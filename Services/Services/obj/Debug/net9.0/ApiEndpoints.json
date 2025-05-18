@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Services.Controllers.AuthController",
+    "ContainingType": "Services.API.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -9,14 +9,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.LoginRequestDto",
+        "Type": "Services.Aplication.DTOs.Auth.LoginDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.CategoriesController",
+    "ContainingType": "Services.API.Controllers.CategoriesController",
     "Method": "CreateCategory",
     "RelativePath": "api/Categories",
     "HttpMethod": "POST",
@@ -25,14 +25,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.CategoryCreateDto",
+        "Type": "Services.Aplication.DTOs.Category.CategoryCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.CategoriesController",
+    "ContainingType": "Services.API.Controllers.CategoriesController",
     "Method": "UpdateCategory",
     "RelativePath": "api/Categories/{id}",
     "HttpMethod": "PUT",
@@ -46,15 +46,15 @@
       },
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.CategoryUpdateDto",
+        "Type": "Services.Aplication.DTOs.Category.UpdateCategoryDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "DeleteCategory",
+    "ContainingType": "Services.API.Controllers.CategoriesController",
+    "Method": "Delete",
     "RelativePath": "api/Categories/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -69,9 +69,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "GetCategories",
-    "RelativePath": "api/Categories/{localId}",
+    "ContainingType": "Services.API.Controllers.CategoriesController",
+    "Method": "GetActiveCategories",
+    "RelativePath": "api/Categories/active-with-subcategories/{localId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -85,92 +85,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "CreateSubcategory",
-    "RelativePath": "api/Categories/admin/subcategories",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.SubcategoryCreateDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "UpdateSubcategory",
-    "RelativePath": "api/Categories/admin/subcategories/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.SubcategoryUpdateDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "DeleteSubcategory",
-    "RelativePath": "api/Categories/admin/subcategories/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "GetSubcategories",
-    "RelativePath": "api/Categories/admin/subcategories/{localId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "localId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "GetAllSubcategories",
-    "RelativePath": "api/Categories/all/{adminId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "adminId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Services.Controllers.CategoriesController",
+    "ContainingType": "Services.API.Controllers.CategoriesController",
     "Method": "GetCategoriesByLocal",
     "RelativePath": "api/Categories/by-local/{localId}",
     "HttpMethod": "GET",
@@ -186,23 +101,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.CategoriesController",
-    "Method": "GetSubcategoriesList",
-    "RelativePath": "api/Categories/subcategories/{localId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "localId",
-        "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Services.Controllers.LocalController",
+    "ContainingType": "Services.API.Controllers.LocalController",
     "Method": "UpdateLocal",
     "RelativePath": "api/Local/{id}",
     "HttpMethod": "PUT",
@@ -216,14 +115,14 @@
       },
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.LocalUpdateDto",
+        "Type": "Services.Aplication.DTOs.AdminDTOs.LocalUpdateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.LocalController",
+    "ContainingType": "Services.API.Controllers.LocalController",
     "Method": "GetLocalInfo",
     "RelativePath": "api/Local/{localId}",
     "HttpMethod": "GET",
@@ -239,7 +138,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.LocalController",
+    "ContainingType": "Services.API.Controllers.LocalController",
     "Method": "GetLocalHeader",
     "RelativePath": "api/Local/header/{localId}",
     "HttpMethod": "GET",
@@ -255,7 +154,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.NotificationController",
+    "ContainingType": "Services.API.Controllers.NotificationController",
     "Method": "UpdateNotification",
     "RelativePath": "api/Notification/{id}",
     "HttpMethod": "PUT",
@@ -269,14 +168,14 @@
       },
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.NotificationCreateDto",
+        "Type": "Services.Aplication.DTOs.AdminDTOs.NotificationCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.NotificationController",
+    "ContainingType": "Services.API.Controllers.NotificationController",
     "Method": "DeleteNotification",
     "RelativePath": "api/Notification/{id}",
     "HttpMethod": "DELETE",
@@ -292,7 +191,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.NotificationController",
+    "ContainingType": "Services.API.Controllers.NotificationController",
     "Method": "GetNotifications",
     "RelativePath": "api/Notification/{localId}",
     "HttpMethod": "GET",
@@ -308,7 +207,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.NotificationController",
+    "ContainingType": "Services.API.Controllers.NotificationController",
     "Method": "CreateNotification",
     "RelativePath": "api/Notification/{localId}",
     "HttpMethod": "POST",
@@ -322,14 +221,14 @@
       },
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.NotificationCreateDto",
+        "Type": "Services.Aplication.DTOs.AdminDTOs.NotificationCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.NotificationController",
+    "ContainingType": "Services.API.Controllers.NotificationController",
     "Method": "GetNotificationForUSer",
     "RelativePath": "api/Notification/by-local/{localId}",
     "HttpMethod": "GET",
@@ -345,7 +244,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.ProductController",
+    "ContainingType": "Services.API.Controllers.ProductController",
     "Method": "CreateProduct",
     "RelativePath": "api/Product",
     "HttpMethod": "POST",
@@ -354,14 +253,14 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.ProductCreateDto",
+        "Type": "Services.Aplication.DTOs.AdminDTOs.ProductCreateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.ProductController",
+    "ContainingType": "Services.API.Controllers.ProductController",
     "Method": "UpdateProduct",
     "RelativePath": "api/Product/{id}",
     "HttpMethod": "PUT",
@@ -375,14 +274,14 @@
       },
       {
         "Name": "dto",
-        "Type": "Services.DTOs.AdminDTOs.ProductUpdateDto",
+        "Type": "Services.Aplication.DTOs.AdminDTOs.ProductUpdateDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.ProductController",
+    "ContainingType": "Services.API.Controllers.ProductController",
     "Method": "DeleteProduct",
     "RelativePath": "api/Product/{id}",
     "HttpMethod": "DELETE",
@@ -398,7 +297,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.ProductController",
+    "ContainingType": "Services.API.Controllers.ProductController",
     "Method": "GetProducts",
     "RelativePath": "api/Product/{localId}",
     "HttpMethod": "GET",
@@ -414,7 +313,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Services.Controllers.ProductController",
+    "ContainingType": "Services.API.Controllers.ProductController",
     "Method": "GetProductAdmin",
     "RelativePath": "api/Product/admin/{adminId}",
     "HttpMethod": "GET",
@@ -423,6 +322,91 @@
     "Parameters": [
       {
         "Name": "adminId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.API.Controllers.SubcategoriesController",
+    "Method": "Create",
+    "RelativePath": "api/Subcategories",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Services.Aplication.DTOs.AdminDTOs.SubcategoryCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.API.Controllers.SubcategoriesController",
+    "Method": "Update",
+    "RelativePath": "api/Subcategories/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "Services.Aplication.DTOs.AdminDTOs.SubcategoryUpdateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.API.Controllers.SubcategoriesController",
+    "Method": "Delete",
+    "RelativePath": "api/Subcategories/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.API.Controllers.SubcategoriesController",
+    "Method": "GetAllByAdmin",
+    "RelativePath": "api/Subcategories/all-by-admin/{adminId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "adminId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Services.API.Controllers.SubcategoriesController",
+    "Method": "GetByLocal",
+    "RelativePath": "api/Subcategories/by-local/{localId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "localId",
         "Type": "System.Guid",
         "IsRequired": true
       }

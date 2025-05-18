@@ -5,7 +5,7 @@ import def from 'ajv/dist/vocabularies/discriminator';
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: "https://digital-menu-2-81mx.onrender.com/api",
+    baseURL: "http://localhost:5262/api",
     headers: {
         'Content-Type': 'application/json',
     },

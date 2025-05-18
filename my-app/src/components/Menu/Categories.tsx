@@ -13,7 +13,7 @@ interface Category {
   id: string;
   name: string;
   description: string;
-  subCategories: Subcategory[];
+  subcategories: Subcategory[];
 }
 
 interface Props {
@@ -31,7 +31,7 @@ const Categories: React.FC<Props> = ({ localId, onSelectSubcategory }) => {
     const fetchCategories = async () => {
       setLoading(true);
       try {
-        const response = await api.get(`/categories/${localId}`);
+        const response = await api.get(`/categories/active-with-subcategories/${localId}`);
         const data: Category[] = response.data;
         setCategories(data);
 
@@ -39,8 +39,8 @@ const Categories: React.FC<Props> = ({ localId, onSelectSubcategory }) => {
           const firstMain = data[0];
           setSelectedMain(firstMain);
 
-          if (firstMain.subCategories.length > 0) {
-            const firstSub = firstMain.subCategories[0];
+          if (firstMain.subcategories.length > 0) {
+            const firstSub = firstMain.subcategories[0];
             setSelectedSub(firstSub.id);
             onSelectSubcategory(firstSub);
           }
@@ -57,8 +57,8 @@ const Categories: React.FC<Props> = ({ localId, onSelectSubcategory }) => {
   const handleMainSelect = (cat: Category) => {
     setSelectedMain(cat);
 
-    if (cat.subCategories.length > 0) {
-      const firstSub = cat.subCategories[0];
+    if (cat.subcategories.length > 0) {
+      const firstSub = cat.subcategories[0];
       setSelectedSub(firstSub.id);
       onSelectSubcategory(firstSub);
     } else {
@@ -102,7 +102,7 @@ const Categories: React.FC<Props> = ({ localId, onSelectSubcategory }) => {
       {/* Subcategories */}
       {selectedMain && (
         <div className="foodbar-type-1 bottom-footbar">
-          {selectedMain.subCategories.map(sub => (
+          {selectedMain.subcategories.map(sub => (
             <div
               key={sub.id}
               className={`foodbar-type-1-category ${

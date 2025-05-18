@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { JwtPayload } from "../types/jwt-payload";
+import { jwtDecode } from "jwt-decode";
+
 
 const AdminLogin: React.FC = () => {
 
@@ -12,7 +15,7 @@ const AdminLogin: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setError(""); 
+        setError("");
 
         try {
             const response = await api.post("/auth/login", {
@@ -20,12 +23,18 @@ const AdminLogin: React.FC = () => {
                 password
             });
 
-            localStorage.setItem("token", response.data.token);
+            const token = response.data.accessToken;
+            localStorage.setItem("token", token);
+
+            const decoded = jwtDecode<JwtPayload>(token);
+
+            console.log(decoded);
+
             localStorage.setItem("user", JSON.stringify({
-                id: response.data.id,
-                username: response.data.username,
-                isSuperAdmin: response.data.isSuperAdmin,
-                localId: response.data.localId
+                id: decoded.UserId,
+                username: decoded.Username,
+                isSuperAdmin: decoded.IsGlobalAdmin === "true",
+                localId: decoded.LocalId
             }));
 
             navigate("/admin/")
@@ -56,7 +65,7 @@ const AdminLogin: React.FC = () => {
                             />
                             <input type="submit" data-wait="Please wait..." className="w-button" value="Login" />
 
-                            {error && <p style={{color : "red"}}>{error}</p>}
+                            {error && <p style={{ color: "red" }}>{error}</p>}
                         </form>
                     </div>
                 </div>

@@ -6,7 +6,7 @@ interface Subcategory {
     id: string;
     name: string;
     isSelected?: boolean;
-  }
+}
 
 interface Product {
     id: string;
@@ -65,35 +65,35 @@ const ProductSettings: React.FC = () => {
 
         fetchProducts();
     }, []);
-    
+
 
     useEffect(() => {
-
-        const fetchSubCategories = async () => {
-            setLoading(true);
-            const user = localStorage.getItem("user");
-
-            if (!user) {
-                return
-            }
-
-            try {
-                const parsedUser = JSON.parse(user);
-                const adminId = parsedUser.id;
-
-                const response = await api.get(`/categories/all/${adminId}`);
-                setSubCategories(response.data);
-            } catch (error) {
-                console.error("Error fetching local data:", error);
-            }
-            finally {
-                setLoading(false);
-            }
-        };
 
         fetchSubCategories();
     }, []);
 
+
+    const fetchSubCategories = async () => {
+        setLoading(true);
+        const user = localStorage.getItem("user");
+
+        if (!user) {
+            return
+        }
+
+        try {
+            const parsedUser = JSON.parse(user);
+            const adminId = parsedUser.id;
+
+            const response = await api.get(`/subcategories/all-by-admin/${adminId}`);
+            setSubCategories(response.data);
+        } catch (error) {
+            console.error("Error fetching local data:", error);
+        }
+        finally {
+            setLoading(false);
+        }
+    };
 
     const handleInputChange = (index: number, field: keyof Product, value: any) => {
         const updatedProducts = [...productList];
@@ -200,37 +200,37 @@ const ProductSettings: React.FC = () => {
 
     const handleCreateProduct = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-    
+
         const user = localStorage.getItem("user");
         if (!user) return;
-    
+
         const parsedUser = JSON.parse(user);
         const adminId = parsedUser.id;
-    
+
         try {
             let uploadedImageUrl = "";
-    
+
             // Ako ima slike, uploaduj sliku na Cloudinary
             if (newProductImage) {
                 const formData = new FormData();
                 formData.append("file", newProductImage);
                 formData.append("upload_preset", "unsigned_preset");
-    
+
                 const response = await fetch("https://api.cloudinary.com/v1_1/dloemc8rb/image/upload", {
                     method: "POST",
                     body: formData,
                 });
-    
+
                 const data = await response.json();
                 if (data.secure_url) {
                     uploadedImageUrl = data.secure_url;
                 }
             }
-    
+
             const selectedSubcategoryIds = subCategories
                 .filter(sc => sc.isSelected)
                 .map(sc => sc.id);
-    
+
             await api.post("/product", {
                 name: newProductName,
                 description: newProductDescription,
@@ -241,22 +241,22 @@ const ProductSettings: React.FC = () => {
                 adminId: adminId,
                 selectedSubCategoryIds: selectedSubcategoryIds
             });
-    
+
             alert("Proizvod uspešno dodat!");
-    
+
             setNewProductName("");
             setNewProductDescription("");
             setNewProductAdditionalDescription("");
             setNewProductPrice("");
             setNewProductImage(null);
             setSubCategories(prev => prev.map(sc => ({ ...sc, isSelected: false })));
-    
+
         } catch (error) {
             console.error("Greška pri kreiranju proizvoda:", error);
             alert("Greška pri kreiranju proizvoda!");
         }
     };
-    
+
 
 
     if (loading) {
@@ -270,7 +270,7 @@ const ProductSettings: React.FC = () => {
                 <div className="items-wrapper">
                     <div className="div-block">
                         <div className="item-form create-if w-form">
-                            <form id="wf-form-Create-item-form"  className="form create-f" onSubmit={handleCreateProduct}>
+                            <form id="wf-form-Create-item-form" className="form create-f" onSubmit={handleCreateProduct}>
                                 <div className="text-block-2">Dodaj novi proizvod</div>
                                 <label htmlFor="name">Naziv*</label>
                                 <input

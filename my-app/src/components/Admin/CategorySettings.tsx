@@ -50,7 +50,7 @@ const CategoriesSettings: React.FC = () => {
         const parsedUser = JSON.parse(user);
 
         try {
-            const response = await api.get(`/categories/admin/subcategories/${parsedUser.localId}`);
+            const response = await api.get(`/subcategories/by-local/${parsedUser.localId}`);
             setSubCategories(response.data);
         } catch (error) {
             console.error(error);
@@ -178,7 +178,7 @@ const CategoriesSettings: React.FC = () => {
 
     const handleSaveSubcategory = async (subcategory: Subcategory) => {
         try {
-            await api.put(`/categories/admin/subcategories/${subcategory.id}`, {
+            await api.put(`/subcategories/${subcategory.id}`, {
                 name: subcategory.name,
                 description: subcategory.description
             });
@@ -195,7 +195,7 @@ const CategoriesSettings: React.FC = () => {
         if (!window.confirm("Da li želite da obrišete potkategoriju?")) return;
 
         try {
-            await api.delete(`/categories/admin/subcategories/${id}`);
+            await api.delete(`/subcategories/${id}`);
             alert("Subkategorija uspešno obrisana!");
             await fetchSubCategories();
         } catch (error) {
@@ -215,7 +215,7 @@ const CategoriesSettings: React.FC = () => {
                 return;
             }
     
-            await api.post(`/categories/admin/subcategories`, {
+            await api.post(`/subcategories`, {
                 name: newSubcategoryName,
                 description: newSubcategoryDescription,
                 categoryId: selectedCategoryId
