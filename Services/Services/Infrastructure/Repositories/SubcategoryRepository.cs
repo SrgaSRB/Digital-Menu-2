@@ -12,12 +12,11 @@ namespace Services.Infrastructure.Repositories
 
         public async Task<IReadOnlyList<Subcategory>> GetUsedInProductsAsync(Guid localId, CancellationToken ct = default)
         {
-            return await _ctx.SubcategoryProducts
-                .Include(sp => sp.Subcategory)
-                    .ThenInclude(sc => sc.Category)
-                .Where(sp => sp.Product.LocalId == localId)
-                .Select(sp => sp.Subcategory)
-                .Distinct()
+            return await _ctx.Subcategories
+                .Where(sc => sc.SubcategoryProducts
+                    .Any(sp => sp.Product.LocalId == localId))
+                .Include(sc => sc.CategoryLinks)
+                    .ThenInclude(cl => cl.Category)
                 .ToListAsync(ct);
         }
 
@@ -31,7 +30,7 @@ namespace Services.Infrastructure.Repositories
                 throw new Aplication.Exceptions.UnauthorizedAccessException("Invalid credentials");
 
             return await _ctx.Subcategories
-                .Where(sc => sc.Category.LocalId == admin.LocalId)
+                .Where(sc => sc.LocalId == admin.LocalId)
                 .ToListAsync(ct);
         }
 
@@ -55,7 +54,7 @@ namespace Services.Infrastructure.Repositories
         public async Task<IReadOnlyList<Subcategory>> GetByLocalIdAsync(Guid localId)
         {
             return await _ctx.Subcategories
-                .Where(sc => sc.Category.LocalId == localId)
+                .Where(sc => sc.LocalId == localId)
                 .ToListAsync();
         }
 
@@ -79,6 +78,17 @@ namespace Services.Infrastructure.Repositories
         {
             _ctx.Subcategories.Remove(subcategory);
             await SaveAsync();
+        }
+
+        public async Task<IReadOnlyList<Subcategory>> GetBasicByLocalAsync(Guid localId)
+        {
+            return await _ctx.Subcategories
+                .Where(sc => sc.LocalId == localId)
+                .Select(sc => new Subcategory
+                {
+                    Id = sc.Id,
+                    Name = sc.Name
+                }).ToListAsync();
         }
 
 

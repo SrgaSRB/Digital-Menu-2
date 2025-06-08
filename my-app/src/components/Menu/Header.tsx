@@ -22,7 +22,7 @@ const Header: React.FC<Props> = ({ localId }) => {
         const fetchLocal = async () => {
             setLoading(true);
             try {
-                const response = await api.get(`/local/header/${localId}`);
+                const response = await api.get(`/local/${localId}/header`);
                 setLocal(response.data);
             } catch (error) {
                 console.error("Error fetching local data:", error);

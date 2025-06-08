@@ -10,20 +10,13 @@ namespace Services.Domain.Models
         public string Name { get; set; } = string.Empty;
         public string SubscriptionType { get; set; } = string.Empty;
         public string LogoUrl { get; set; } = string.Empty;
-        public bool HaveLogo { get; set;} = false;
+        public bool HaveLogo { get; set; } = false;
 
-        public ICollection<Product> Products { get; set; }
-        public ICollection<MenuTheme> MenuThemes { get; set; }
-        public ICollection<Notification> Notifications { get; set; }
+        public ICollection<Product> Products { get; set; } = new List<Product>();
+        public ICollection<MenuTheme> MenuThemes { get; set; } = new List<MenuTheme>();
+        public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
         public Subscription? Subscription { get; set; }
-
-        public Local()
-        {
-            Products = new List<Product>();
-            MenuThemes = new List<MenuTheme>();
-            Notifications = new List<Notification>();
-        }
-
+        public ICollection<Subcategory> Subcategories { get; set; } = new List<Subcategory>();
     }
 
 }

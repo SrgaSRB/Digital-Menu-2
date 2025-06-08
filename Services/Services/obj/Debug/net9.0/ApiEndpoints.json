@@ -115,7 +115,7 @@
       },
       {
         "Name": "dto",
-        "Type": "Services.Aplication.DTOs.AdminDTOs.LocalUpdateDto",
+        "Type": "Services.Aplication.DTOs.Local.UpdateLocalDto",
         "IsRequired": true
       }
     ],
@@ -140,7 +140,7 @@
   {
     "ContainingType": "Services.API.Controllers.LocalController",
     "Method": "GetLocalHeader",
-    "RelativePath": "api/Local/header/{localId}",
+    "RelativePath": "api/Local/{localId}/header",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

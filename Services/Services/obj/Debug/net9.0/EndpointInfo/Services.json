@@ -176,7 +176,7 @@
         }
       }
     },
-    "/api/Local/header/{localId}": {
+    "/api/Local/{localId}/header": {
       "get": {
         "tags": [
           "Local"
@@ -242,17 +242,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LocalUpdateDto"
+                "$ref": "#/components/schemas/UpdateLocalDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LocalUpdateDto"
+                "$ref": "#/components/schemas/UpdateLocalDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LocalUpdateDto"
+                "$ref": "#/components/schemas/UpdateLocalDto"
               }
             }
           }
@@ -714,20 +714,6 @@
         },
         "additionalProperties": false
       },
-      "LocalUpdateDto": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "imageUrl": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
       "LoginDto": {
         "type": "object",
         "properties": {
@@ -879,6 +865,20 @@
               "type": "string",
               "format": "uuid"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateLocalDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageUrl": {
+            "type": "string",
             "nullable": true
           }
         },

@@ -22,7 +22,7 @@ namespace Services.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Services.Models.Admin", b =>
+            modelBuilder.Entity("Services.Domain.Models.Admin", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace Services.Migrations
                     b.ToTable("Admins");
                 });
 
-            modelBuilder.Entity("Services.Models.Category", b =>
+            modelBuilder.Entity("Services.Domain.Models.Category", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace Services.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid?>("LocalId")
+                    b.Property<Guid>("LocalId")
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
@@ -78,7 +78,22 @@ namespace Services.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Services.Models.Local", b =>
+            modelBuilder.Entity("Services.Domain.Models.CategorySubcategory", b =>
+                {
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("SubcategoryId")
+                        .HasColumnType("uuid");
+
+                    b.HasKey("CategoryId", "SubcategoryId");
+
+                    b.HasIndex("SubcategoryId");
+
+                    b.ToTable("CategorySubcategories");
+                });
+
+            modelBuilder.Entity("Services.Domain.Models.Local", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,7 +119,7 @@ namespace Services.Migrations
                     b.ToTable("Locals");
                 });
 
-            modelBuilder.Entity("Services.Models.MenuTheme", b =>
+            modelBuilder.Entity("Services.Domain.Models.MenuTheme", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -128,7 +143,7 @@ namespace Services.Migrations
                     b.ToTable("MenuThemes");
                 });
 
-            modelBuilder.Entity("Services.Models.Notification", b =>
+            modelBuilder.Entity("Services.Domain.Models.Notification", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -155,7 +170,7 @@ namespace Services.Migrations
                     b.ToTable("Notifications");
                 });
 
-            modelBuilder.Entity("Services.Models.Product", b =>
+            modelBuilder.Entity("Services.Domain.Models.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -195,18 +210,18 @@ namespace Services.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Services.Models.Subcategory", b =>
+            modelBuilder.Entity("Services.Domain.Models.Subcategory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("CategoryId")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<Guid>("LocalId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -214,12 +229,12 @@ namespace Services.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("LocalId");
 
                     b.ToTable("Subcategories");
                 });
 
-            modelBuilder.Entity("Services.Models.SubcategoryProduct", b =>
+            modelBuilder.Entity("Services.Domain.Models.SubcategoryProduct", b =>
                 {
                     b.Property<Guid>("SubcategoryId")
                         .HasColumnType("uuid");
@@ -234,7 +249,7 @@ namespace Services.Migrations
                     b.ToTable("SubcategoryProducts");
                 });
 
-            modelBuilder.Entity("Services.Models.Subscription", b =>
+            modelBuilder.Entity("Services.Domain.Models.Subscription", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -261,9 +276,9 @@ namespace Services.Migrations
                     b.ToTable("Subscriptions");
                 });
 
-            modelBuilder.Entity("Services.Models.Admin", b =>
+            modelBuilder.Entity("Services.Domain.Models.Admin", b =>
                 {
-                    b.HasOne("Services.Models.Local", "Local")
+                    b.HasOne("Services.Domain.Models.Local", "Local")
                         .WithMany()
                         .HasForeignKey("LocalId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -272,18 +287,39 @@ namespace Services.Migrations
                     b.Navigation("Local");
                 });
 
-            modelBuilder.Entity("Services.Models.Category", b =>
+            modelBuilder.Entity("Services.Domain.Models.Category", b =>
                 {
-                    b.HasOne("Services.Models.Local", "Local")
+                    b.HasOne("Services.Domain.Models.Local", "Local")
                         .WithMany()
-                        .HasForeignKey("LocalId");
+                        .HasForeignKey("LocalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Local");
                 });
 
-            modelBuilder.Entity("Services.Models.MenuTheme", b =>
+            modelBuilder.Entity("Services.Domain.Models.CategorySubcategory", b =>
                 {
-                    b.HasOne("Services.Models.Local", "Local")
+                    b.HasOne("Services.Domain.Models.Category", "Category")
+                        .WithMany("SubcategoryLinks")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Services.Domain.Models.Subcategory", "Subcategory")
+                        .WithMany("CategoryLinks")
+                        .HasForeignKey("SubcategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Subcategory");
+                });
+
+            modelBuilder.Entity("Services.Domain.Models.MenuTheme", b =>
+                {
+                    b.HasOne("Services.Domain.Models.Local", "Local")
                         .WithMany("MenuThemes")
                         .HasForeignKey("LocalId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -292,9 +328,9 @@ namespace Services.Migrations
                     b.Navigation("Local");
                 });
 
-            modelBuilder.Entity("Services.Models.Notification", b =>
+            modelBuilder.Entity("Services.Domain.Models.Notification", b =>
                 {
-                    b.HasOne("Services.Models.Local", "Local")
+                    b.HasOne("Services.Domain.Models.Local", "Local")
                         .WithMany("Notifications")
                         .HasForeignKey("LocalId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -303,9 +339,9 @@ namespace Services.Migrations
                     b.Navigation("Local");
                 });
 
-            modelBuilder.Entity("Services.Models.Product", b =>
+            modelBuilder.Entity("Services.Domain.Models.Product", b =>
                 {
-                    b.HasOne("Services.Models.Local", "Local")
+                    b.HasOne("Services.Domain.Models.Local", "Local")
                         .WithMany("Products")
                         .HasForeignKey("LocalId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -314,26 +350,26 @@ namespace Services.Migrations
                     b.Navigation("Local");
                 });
 
-            modelBuilder.Entity("Services.Models.Subcategory", b =>
+            modelBuilder.Entity("Services.Domain.Models.Subcategory", b =>
                 {
-                    b.HasOne("Services.Models.Category", "Category")
+                    b.HasOne("Services.Domain.Models.Local", "Local")
                         .WithMany("Subcategories")
-                        .HasForeignKey("CategoryId")
+                        .HasForeignKey("LocalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
+                    b.Navigation("Local");
                 });
 
-            modelBuilder.Entity("Services.Models.SubcategoryProduct", b =>
+            modelBuilder.Entity("Services.Domain.Models.SubcategoryProduct", b =>
                 {
-                    b.HasOne("Services.Models.Product", "Product")
+                    b.HasOne("Services.Domain.Models.Product", "Product")
                         .WithMany("SubcategoryProducts")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Services.Models.Subcategory", "Subcategory")
+                    b.HasOne("Services.Domain.Models.Subcategory", "Subcategory")
                         .WithMany("SubcategoryProducts")
                         .HasForeignKey("SubcategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -344,23 +380,23 @@ namespace Services.Migrations
                     b.Navigation("Subcategory");
                 });
 
-            modelBuilder.Entity("Services.Models.Subscription", b =>
+            modelBuilder.Entity("Services.Domain.Models.Subscription", b =>
                 {
-                    b.HasOne("Services.Models.Local", "Local")
+                    b.HasOne("Services.Domain.Models.Local", "Local")
                         .WithOne("Subscription")
-                        .HasForeignKey("Services.Models.Subscription", "LocalId")
+                        .HasForeignKey("Services.Domain.Models.Subscription", "LocalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Local");
                 });
 
-            modelBuilder.Entity("Services.Models.Category", b =>
+            modelBuilder.Entity("Services.Domain.Models.Category", b =>
                 {
-                    b.Navigation("Subcategories");
+                    b.Navigation("SubcategoryLinks");
                 });
 
-            modelBuilder.Entity("Services.Models.Local", b =>
+            modelBuilder.Entity("Services.Domain.Models.Local", b =>
                 {
                     b.Navigation("MenuThemes");
 
@@ -368,16 +404,20 @@ namespace Services.Migrations
 
                     b.Navigation("Products");
 
+                    b.Navigation("Subcategories");
+
                     b.Navigation("Subscription");
                 });
 
-            modelBuilder.Entity("Services.Models.Product", b =>
+            modelBuilder.Entity("Services.Domain.Models.Product", b =>
                 {
                     b.Navigation("SubcategoryProducts");
                 });
 
-            modelBuilder.Entity("Services.Models.Subcategory", b =>
+            modelBuilder.Entity("Services.Domain.Models.Subcategory", b =>
                 {
+                    b.Navigation("CategoryLinks");
+
                     b.Navigation("SubcategoryProducts");
                 });
 #pragma warning restore 612, 618

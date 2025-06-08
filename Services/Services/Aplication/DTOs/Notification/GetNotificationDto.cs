@@ -1,6 +1,6 @@
-﻿namespace Services.Aplication.DTOs.AdminDTOs
+﻿namespace Services.Aplication.DTOs.Notification
 {
-    public class NotificationGetDto
+    public class GetNotificationDto
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

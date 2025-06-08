@@ -141,7 +141,6 @@ C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\bin\Debug\net9.0\Micro
 C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\SRDJAN\Desktop\Projects\Digital Menu v2\Digital-Menu-2\Services\Services\obj\Debug\net9.0\Services.csproj.AssemblyReference.cache
 C:\Users\SRDJAN\Desktop\Projects\Digital Menu v2\Digital-Menu-2\Services\Services\obj\Debug\net9.0\Services.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\SRDJAN\Desktop\Projects\Digital Menu v2\Digital-Menu-2\Services\Services\obj\Debug\net9.0\Services.AssemblyInfoInputs.cache
@@ -281,3 +280,6 @@ C:\Users\SRDJAN\Desktop\Projects\Digital Menu v2\Digital-Menu-2\Services\Service
 C:\Users\SRDJAN\Desktop\Projects\Digital Menu v2\Digital-Menu-2\Services\Services\obj\Debug\net9.0\Services.genruntimeconfig.cache
 C:\Users\SRDJAN\Desktop\Projects\Digital Menu v2\Digital-Menu-2\Services\Services\obj\Debug\net9.0\ref\Services.dll
 C:\Users\SRDJAN\Desktop\Projects\Digital Menu v2\Digital-Menu-2\Services\Services\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\SRDJAN\Projects\Digital menu 2\Services\Services\bin\Debug\net9.0\Hellang.Middleware.ProblemDetails.dll

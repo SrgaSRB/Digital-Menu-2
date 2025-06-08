@@ -7,6 +7,7 @@ namespace Services.Aplication.Interfaces.Repositories
         Task<IReadOnlyList<Subcategory>> GetUsedInProductsAsync(Guid localId, CancellationToken ct = default);
         Task<IReadOnlyList<Subcategory>> GetByAdminIdAsync(Guid adminId, CancellationToken ct = default);
         Task<IReadOnlyList<Subcategory>> GetAllBasicAsync();
+        Task<IReadOnlyList<Subcategory>> GetBasicByLocalAsync(Guid localId);
         Task<IReadOnlyList<Subcategory>> GetByIdsAsync(List<Guid> ids);
         Task<IReadOnlyList<Subcategory>> GetByLocalIdAsync(Guid localId);
         Task<Subcategory?> GetAsync(Guid id);

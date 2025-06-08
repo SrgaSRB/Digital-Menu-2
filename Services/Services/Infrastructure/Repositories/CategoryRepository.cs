@@ -21,7 +21,8 @@ namespace Services.Infrastructure.Repositories
         public async Task<IReadOnlyList<Category>> GetByLocalWithSubcategoriesAsync(Guid localId)
         {
             return await _ctx.Categories
-                .Include(c => c.Subcategories)
+                .Include(c => c.SubcategoryLinks)           
+                    .ThenInclude(cs => cs.Subcategory)  
                 .Where(c => c.LocalId == localId)
                 .ToListAsync();
         }
@@ -29,7 +30,8 @@ namespace Services.Infrastructure.Repositories
         public async Task<Category?> GetAsync(Guid id)
         {
             return await _ctx.Categories
-                .Include(c => c.Subcategories)
+                .Include(c => c.SubcategoryLinks)
+                    .ThenInclude(cs => cs.Subcategory)
                 .FirstOrDefaultAsync(c => c.Id == id);
         }
 

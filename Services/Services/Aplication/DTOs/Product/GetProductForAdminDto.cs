@@ -1,9 +1,9 @@
 ﻿using Services.Aplication.DTOs.Subcategory;
 using System.Globalization;
 
-namespace Services.Aplication.DTOs.AdminDTOs
+namespace Services.Aplication.DTOs.Product
 {
-    public class ProductGetDto
+    public class GetProductForAdminDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;

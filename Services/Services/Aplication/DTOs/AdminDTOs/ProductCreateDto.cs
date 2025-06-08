@@ -8,7 +8,7 @@
         public decimal Price { get; set; }
         public string ImageUrl { get; set; } = string.Empty;
         public bool IsDeleted { get; set; }
-        public Guid AdminId { get; set; }
+        public Guid loclaId { get; set; }
         public List<Guid> SelectedSubCategoryIds { get; set; } = new List<Guid>();
     }
 

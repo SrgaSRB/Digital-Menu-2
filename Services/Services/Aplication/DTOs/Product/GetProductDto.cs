@@ -1,6 +1,6 @@
 ﻿namespace Services.Aplication.DTOs.UserMenuDTOs
 {
-    public class ProductDto
+    public class GetProductDto
     {
 
         public Guid Id { get; set; }

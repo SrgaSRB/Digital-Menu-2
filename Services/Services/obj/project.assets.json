@@ -15,6 +15,25 @@
           }
         }
       },
+      "Hellang.Middleware.ProblemDetails/6.5.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Reflection.Metadata": "5.0.0"
+        },
+        "compile": {
+          "lib/net6.0/Hellang.Middleware.ProblemDetails.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Hellang.Middleware.ProblemDetails.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -948,7 +967,7 @@
       "System.Collections.Immutable/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net7.0/System.Collections.Immutable.dll": {
             "related": ".xml"
           }
         },
@@ -1110,7 +1129,7 @@
           "System.Collections.Immutable": "7.0.0"
         },
         "compile": {
-          "lib/net7.0/_._": {
+          "lib/net7.0/System.Reflection.Metadata.dll": {
             "related": ".xml"
           }
         },
@@ -1203,6 +1222,24 @@
         "lib/netstandard2.1/BCrypt.Net-Next.dll",
         "lib/netstandard2.1/BCrypt.Net-Next.xml",
         "readme.md"
+      ]
+    },
+    "Hellang.Middleware.ProblemDetails/6.5.1": {
+      "sha512": "LgceF4mPguB/q3NWs6T3bitOFnYIANSRvfhASMgVb8ks7fSqY8jbdBHoVEuUDmxg3T7+kF21qSE0jQv9hdpLng==",
+      "type": "package",
+      "path": "hellang.middleware.problemdetails/6.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "hellang.middleware.problemdetails.6.5.1.nupkg.sha512",
+        "hellang.middleware.problemdetails.nuspec",
+        "lib/net5.0/Hellang.Middleware.ProblemDetails.dll",
+        "lib/net5.0/Hellang.Middleware.ProblemDetails.xml",
+        "lib/net6.0/Hellang.Middleware.ProblemDetails.dll",
+        "lib/net6.0/Hellang.Middleware.ProblemDetails.xml",
+        "lib/netcoreapp3.1/Hellang.Middleware.ProblemDetails.dll",
+        "lib/netcoreapp3.1/Hellang.Middleware.ProblemDetails.xml",
+        "problem-logo.png"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -3664,6 +3701,7 @@
   "projectFileDependencyGroups": {
     "net9.0": [
       "BCrypt.Net-Next >= 4.0.3",
+      "Hellang.Middleware.ProblemDetails >= 6.5.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 9.0.4",
       "Microsoft.AspNetCore.OpenApi >= 9.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.4",
@@ -3674,19 +3712,19 @@
   },
   "packageFolders": {
     "C:\\Users\\SRDJAN\\.nuget\\packages\\": {},
-    "E:\\Vidual studio 2019 Shared components, tools\\NuGetPackages": {}
+    "D:\\VS 2022\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\Services.csproj",
+      "projectPath": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\SRDJAN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\obj\\",
+      "outputPath": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "E:\\Vidual studio 2019 Shared components, tools\\NuGetPackages"
+        "D:\\VS 2022\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\SRDJAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3698,7 +3736,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3717,7 +3754,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net9.0": {
@@ -3726,6 +3763,10 @@
           "BCrypt.Net-Next": {
             "target": "Package",
             "version": "[4.0.3, )"
+          },
+          "Hellang.Middleware.ProblemDetails": {
+            "target": "Package",
+            "version": "[6.5.1, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -3773,7 +3814,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

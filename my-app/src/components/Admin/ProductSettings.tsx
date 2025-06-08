@@ -51,9 +51,9 @@ const ProductSettings: React.FC = () => {
 
             try {
                 const parsedUser = JSON.parse(user);
-                const adminId = parsedUser.id;
+                const localId = parsedUser.localId;
 
-                const response = await api.get(`/product/admin/${adminId}`);
+                const response = await api.get(`/product/admin/${localId}`);
                 setProductList(response.data);
             } catch (error) {
                 console.error("Error fetching local data:", error);

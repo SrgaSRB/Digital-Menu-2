@@ -1,6 +1,6 @@
-﻿namespace Services.Aplication.DTOs.AdminDTOs
+﻿namespace Services.Aplication.DTOs.Local
 {
-    public class LocalUpdateDto
+    public class UpdateLocalDto
     {
         public string Name { get; set; } = string.Empty;
         public string? ImageUrl { get; set; }

@@ -17,8 +17,8 @@ namespace Services.Infrastructure.Repositories
 
         public async Task<Admin> GetAdminByUsernameAsync(string username, CancellationToken ct)
         {
-            var admin = await _context.Admins
-                .FirstOrDefaultAsync(a => a.Username == username);
+            var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Username == username)
+                ?? throw new Aplication.Exceptions.NotFoundException($"Admin with username: {username} not found");
 
             return admin;
         }

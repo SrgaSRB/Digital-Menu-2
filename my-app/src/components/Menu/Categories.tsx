@@ -35,6 +35,8 @@ const Categories: React.FC<Props> = ({ localId, onSelectSubcategory }) => {
         const data: Category[] = response.data;
         setCategories(data);
 
+        console.log(response.data)
+
         if (data.length > 0) {
           const firstMain = data[0];
           setSelectedMain(firstMain);

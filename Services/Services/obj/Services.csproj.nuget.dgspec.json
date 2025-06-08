@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\Services.csproj": {}
+    "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\Services.csproj": {
+    "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\SRDJAN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SRDJAN\\Desktop\\Projects\\Digital Menu v2\\Digital-Menu-2\\Services\\Services\\obj\\",
+        "outputPath": "C:\\Users\\SRDJAN\\Projects\\Digital menu 2\\Services\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "E:\\Vidual studio 2019 Shared components, tools\\NuGetPackages"
+          "D:\\VS 2022\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\SRDJAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -54,6 +53,10 @@
             "BCrypt.Net-Next": {
               "target": "Package",
               "version": "[4.0.3, )"
+            },
+            "Hellang.Middleware.ProblemDetails": {
+              "target": "Package",
+              "version": "[6.5.1, )"
             },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -101,7 +104,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

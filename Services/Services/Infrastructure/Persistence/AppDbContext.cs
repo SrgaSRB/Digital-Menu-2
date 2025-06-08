@@ -18,22 +18,50 @@ namespace Services.Infrastructure.Data
         public DbSet<Subcategory> Subcategories { get; set; }
         public DbSet<SubcategoryProduct> SubcategoryProducts { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<CategorySubcategory> CategorySubcategories { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CategorySubcategory>()
+                .HasKey(cs => new { cs.CategoryId, cs.SubcategoryId });
+
+            modelBuilder.Entity<CategorySubcategory>()
+                .HasOne(cs => cs.Category)
+                .WithMany(c => c.SubcategoryLinks)
+                .HasForeignKey(cs => cs.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<CategorySubcategory>()
+                .HasOne(cs => cs.Subcategory)
+                .WithMany(sc => sc.CategoryLinks)
+                .HasForeignKey(cs => cs.SubcategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<SubcategoryProduct>()
                 .HasKey(sp => new { sp.SubcategoryId, sp.ProductId });
 
             modelBuilder.Entity<SubcategoryProduct>()
                 .HasOne(sp => sp.Subcategory)
-                .WithMany(s => s.SubcategoryProducts)
-                .HasForeignKey(sp => sp.SubcategoryId);
+                .WithMany(sc => sc.SubcategoryProducts)
+                .HasForeignKey(sp => sp.SubcategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<SubcategoryProduct>()
                 .HasOne(sp => sp.Product)
                 .WithMany(p => p.SubcategoryProducts)
-                .HasForeignKey(sp => sp.ProductId);
+                .HasForeignKey(sp => sp.ProductId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Subcategory>()
+                .HasOne(sc => sc.Local)
+                .WithMany(l => l.Subcategories)
+                .HasForeignKey(sc => sc.LocalId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            base.OnModelCreating(modelBuilder);
         }
+
 
     }
 }
